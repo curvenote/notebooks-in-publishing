@@ -1,0 +1,17 @@
+version: 1
+project:
+  title: Publishing Notebooks - JATS & MECA
+  github: https://github.com/curvenote/notebooks-now
+site:
+  title: Publishing Notebooks - JATS & MECA
+  projects:
+    - slug: jats
+      path: .
+  actions:
+    - title: Notebooks Now
+      url: https://data.agu.org/notebooks-now/
+  domains:
+    - notebooks_now.curve.space
+  twitter: rowancockett
+  logo: null
+  logo_text: Publishing Notebooks - JATS & MECA
