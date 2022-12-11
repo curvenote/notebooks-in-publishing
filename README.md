@@ -40,3 +40,9 @@ To archive, host, and disseminate scholarly articles publishers typeset author s
 [^openaccessjats]: There are currently 5.8 million works with full-text XML available through CrossRef, for example. See [CrossRef’s API](https://api.crossref.org/works?filter=full-text.type:application/xml,full-text.application:text-mining&facet=publisher-name:*&rows=0).
 
 When considering how to include notebooks in publishing, identifying how to include the notebook content in the VoR will unlock all current downstream providers, and allows the use of notebooks in publishing to be broadly adopted. Here we will discuss the constraints of JATS, suggest missing components, and recommend community standards to support notebooks in the VoR. These are designed to support various use cases of browsing, replication, and distribution of these articles as executable documents. We also consider how these processes fit into author-driven workflows to allow for continuous updates, feedback, and iterations throughout the process of creating this structured data.
+
+## Contents
+
+- [Approach](./01-approach.md)
+- [Notebooks as JATS](./02-notebooks-as-jats.md)
+- [Working Notes](./03-notes.md)
