@@ -8,7 +8,7 @@ The goal of this article is to recommend community standards for representing No
 
 We propose that all referenced notebooks be represented as:
 
-- A rendering of the notebook, including source code, as a JATS `sub-article` of the main the JATS article.
+- A rendering of the notebook, including code and markdown cells, as a JATS `sub-article` of the main the JATS article.
 - A copy of the notebook file itself as a Jupyter Notebook file (`.ipynb`) included in the MECA file (referenced via `supplementary-materials`)
 - An optional link from the `sub-article` to a deployed version of a notebook (via `self-uri`)
 - Optional information about setting up an execution environment for a notebook (via `ext-link` of a specific `type`) in the `sub-article` article metadata.
