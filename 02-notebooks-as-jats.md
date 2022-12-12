@@ -47,6 +47,16 @@ If the document is stored by the publisher directly, a `supplementary-material` 
 
 **TODO:** specific-use: the notebooks can either be the source or an export format (e.g. in using quarto/rmd). Should we list both here, with different content types?
 
+### Indexing Dependencies
+
+From an XML indexing and archiving perspective, it is advantageous to list the requirements to run a computational notebook. These should be captured in such a way that they can give credit to scientific packages, for example, answering questions such as "how many articles used `numpy >= 1.22` this year?".
+
+These should be included in the main `front` of the entire article, not each sub-article (we believe this is a reasonable constraint) that specificies a single computational article for each article, rather than each notebook.
+
+**TODO:** Not sure how to represent this.
+
+Note that the purpose of this is not to replace tools like `requirements.txt`, but to provide information to existing indexing and archiving tools to make use of these data in addition to other ways to keep the computational notebooks fully supported.
+
 ### Notebook as the main article
 
 It is possible to use a notebook as the main article, however, the structure of the JATS in this case is _not_ dictated by the notebook structure, but by the narrative structure.
