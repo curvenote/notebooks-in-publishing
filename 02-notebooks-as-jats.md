@@ -6,6 +6,15 @@ date: 2022-12-09
 
 The goal of this article is to recommend community standards for representing Notebooks as [JATS](https://jats.nlm.nih.gov). As discussed in [approach](./approach.md), the notebook can either be the main document of a JATS `article` or as a `sub-article`, which is more appropriate for authors who create figures in different notebooks today, and reference the figures created in those notebooks in the main document.
 
+We propose that all referenced notebooks be represented as:
+
+- A rendering of the notebook, including source code, as a JATS `sub-article` of the main the JATS article.
+- A copy of the notebook file itself as a Jupyter Notebook file (`.ipynb`) included in the MECA file (referenced via `supplementary-materials`)
+- An optional link from the `sub-article` to a deployed version of a notebook (via `self-uri`)
+- Optional information about setting up an execution environment for a notebook (via `ext-link` of a specific `type`) in the `sub-article` article metadata.
+
+From within the main `article` within the JATS XML, `xref`s to the `sub-article` or elements within `sub-article` may be used as appropriate.
+
 :::{.callout-note}
 
 This is a very rough `DRAFT`, as we get more authors, we can add stonger language like "we recommend" etc. That may have leaked in already.
@@ -25,7 +34,8 @@ This is a very rough `DRAFT`, as we get more authors, we can add stonger languag
     <!-- The subarticle should maintain a link to the full, original notebook, e.g. on zenodo -->
     <!-- this allows tools like mybinder, etc to easily integrate -->
     <self-uri xlink:href="https://zenodo.org/record/000001?notebook1.ipynb" content-type="ipynb" assigning-authority="zenodo">Available on Zenodo</self-uri>
-    <!-- Alternatively, use a supplementary-material tag if hosted by the journal -->
+    <!-- Additionally, author may include the notebook file in the MECA bundle -->
+    <!-- and use a supplementary-material tag to refer to it -->
     <supplementary-material xlink:href="notebooks/source.ipynb" specific-use="document" mimetype="application" mime-subtype="x-ipynb+json" />
   </front-stub>
   <body>
@@ -59,7 +69,7 @@ Note that the purpose of this is not to replace tools like `requirements.txt`, b
 
 ### Notebook as the main article
 
-It is possible to use a notebook as the main article, however, the structure of the JATS in this case is _not_ dictated by the notebook structure, but by the narrative structure.
+It is possible to use a notebook to author the main article, however, the structure of the JATS in this case is _not_ dictated by the notebook structure, but by the narrative structure.
 
 **TODO** Expand this section/idea. This allows for things like inline execution in the main article, but has different constraints.
 
