@@ -259,7 +259,7 @@ When possible, `sub-article`s should include a `ext-link`|`self-uri`|`custom-met
 
 1) A REES path
 
-   REES (Reproducible Execution Environment Specification) provides a standard approach for reproducing computational environments. It defines a directory     containing zero or more configuration files as a valid reproducible execution environment. A broad set of configuration files are supported. A complete list is available [here](https://repo2docker.readthedocs.io/en/latest/config_files.html#config-files).
+   REES (Reproducible Execution Environment Specification) provides a standard approach for reproducing computational environments. It defines a directory containing zero or more configuration files as a valid reproducible execution environment. A broad set of configuration files are supported. A complete list is available [here](https://repo2docker.readthedocs.io/en/latest/config_files.html#config-files).
 
 The element may either provide a local path to a REES compliant folder or provide a remote path to a `git` repo which when cloned will provide a REES complaint folder. 
 
