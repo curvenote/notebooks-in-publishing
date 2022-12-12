@@ -250,3 +250,22 @@ This would privide rich references, to specific numbers in an article, and could
 For example, `` The study had `r num` participants ``, can we reference a parameter from a notebook, or some other variable in a table?
 
 These could be collected at the top of each article and then referenced, somewhat similar to footnotes?
+
+## Restoring Execution Environment
+
+Each `sub-article` that represents a notebook with executable code may also include information about how to restore an execution environment to execute the code within the notebook. We understand that not all notebooks will have the ability to provide such information, but when possible we encourage that authors include this information, allowing journal publishers, reviewers, or other parties to host and execute the notebook code.
+
+When possible, `sub-article`s should include a `ext-link`|`self-uri`|`custom-meta-group` with a path that can be used to restore the execution environment. The path may be:
+
+1) A REES path
+
+   REES (Reproducible Execution Environment Specification) provides a standard approach for reproducing computational environments. It defines a directory containing zero or more configuration files as a valid reproducible execution environment. A broad set of configuration files are supported. A complete list is available [here](https://repo2docker.readthedocs.io/en/latest/config_files.html#config-files).
+
+The element may either provide a local path to a REES compliant folder or provide a remote path to a `git` repo which when cloned will provide a REES complaint folder. 
+
+2) A Docker image path
+
+   The element may provide a URI to a Docker image (most likely hosted on a Docker registry).
+
+**TODO:** Discuss specific element that makes the most sense to use.
+
