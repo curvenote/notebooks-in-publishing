@@ -26,7 +26,7 @@ In some cases, it is possible to collapse all computational information into a s
 
 > The purple and orange components, interactive figure or other computational outputs, are created in a computational notebook and subsequently used in other narrative or presentation-focused scientific article.
 
-For maximum downstream utility, these notebooks should be included in the full JATS XML. For this purpose we suggest the use of the `sub-article` element for each notebook, or in the 1:1 relationship, the `article` itself. The way in which this XML document is consumed in a viewing context, can of course diverge from the requirements of a single-XML document. With this approach, JATS can take a step towards more fully representing the “research compendium”[^compendium] and align to existing researcher practices.
+For maximum downstream utility, these notebooks should be included in the full JATS XML. For this purpose we suggest the use of the `sub-article` element for each notebook whether that notebook represents the source notebook for the article itself or a notebook that is used to produce a figure, table, or other element of the article. The way in which this XML document is consumed in a viewing context, can of course diverge from the requirements of a single-XML document. With this approach, JATS can take a step towards more fully representing the “research compendium”[^compendium] and align to existing researcher practices.
 
 [^compendium]: For examples and explanations of this, see [The Turing Way](https://the-turing-way.netlify.app/reproducible-research/compendia), any step towards representing the full reproduction of research in the archived VoR is valuable.
 
