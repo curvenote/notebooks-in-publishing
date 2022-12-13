@@ -2,6 +2,7 @@ version: 1
 project:
   title: Publishing Notebooks - JATS & MECA
   github: https://github.com/curvenote/notebooks-now
+  license: CC-BY-4.0
 site:
   title: Publishing Notebooks - JATS & MECA
   projects:
@@ -12,6 +13,5 @@ site:
       url: https://data.agu.org/notebooks-now/
   domains:
     - notebooks_now.curve.space
-  twitter: rowancockett
   logo: null
   logo_text: Publishing Notebooks - JATS & MECA
