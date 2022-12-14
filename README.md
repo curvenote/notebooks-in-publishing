@@ -17,7 +17,7 @@ This is a _rough_ `DRAFT`, aiming to provide recommendations and examples on how
 
 # Contributors
 
-The AGU _Notebooks Now_ working groups will be participating and leading the creation of these documents.
+The _Notebooks Now!_ working groups will be participating and leading the creation of these documents.
 Current contributors to these documents are:
 
 Rowan Cockett
@@ -31,6 +31,12 @@ J.J. Allaire
 Charles Teague
 : **Roles**: Writing – Original Draft Preparation, Software
 : **Affiliation**: Posit Software PBC
+:::
+
+Christopher Erdmann
+: **Roles**: Writing – Original Draft Preparation, Conceptualization
+: **Affiliation**: Michael J. Fox Foundation
+: **GitHub**: @libcce
 :::
 
 At AGU Notebooks Now, we looked at the academic publishing workflows around notebooks as a number of steps: (1) pre-submission, (2) submission & metadata, (3) editorial & peer review, and (4) production & post production. Each step of this workflow and how they fit together may be required to change or adapt when considering computational content in notebooks as a core publication artifact.
