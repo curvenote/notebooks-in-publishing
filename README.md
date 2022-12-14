@@ -10,7 +10,7 @@ date: 2022-12-09
 
 # DRAFT
 
-This is a _rough_ `DRAFT`, aiming to provide recommendations and examples on how to use notebooks in publishing, including how to adapt and improve JATS and other standards. The collaborations for starting these documents came out of [_Notebooks Now!_][notebooks-now].
+This is a _rough_ `DRAFT`, aiming to provide recommendations and examples on how to use notebooks in publishing, including how to adapt and improve JATS and other standards. The collaborations for starting these documents came out of [_Notebooks Now!_][notebooks-now] ([Stall _et al._, 2022](https://doi.org/10.5281/zenodo.6981363), see [recording](https://data.agu.org/notebooks-now/2022/11/03/nn-workshop-recordings.html)).
 
 :::
 
