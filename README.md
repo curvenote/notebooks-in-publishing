@@ -23,18 +23,22 @@ Current contributors to these documents are:
 Rowan Cockett
 : **Roles**: Writing – Original Draft Preparation, Software, Visualization
 : **Affiliation**: Curvenote Inc
+: **GitHub**: @rowanc1
 
 J.J. Allaire
 : **Roles**: Writing – Original Draft Preparation, Software
 : **Affiliation**: Posit Software PBC
+: **GitHub**: @jjallaire
 
 Charles Teague
 : **Roles**: Writing – Original Draft Preparation, Software
 : **Affiliation**: Posit Software PBC
+: **GitHub**: @dragonstyle
 
 Jeffrey Beck
 : **Roles**: Writing – Review & Editing, Conceptualization
 : **Affiliation**: National Center for Biotechnology Information, National Library of Medicine, National Institutes of Health, Bethesda, MD 20894, USA.
+: **GitHub**: @jeffbeckncbi
 
 :::
 
