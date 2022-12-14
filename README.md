@@ -10,14 +10,14 @@ date: 2022-12-09
 
 # DRAFT
 
-This is a _rough_ `DRAFT`, aiming to provide recommendations and examples on how to use notebooks in publishing, including how to adapt and improve JATS and other standards.
+This is a _rough_ `DRAFT`, aiming to provide recommendations and examples on how to use notebooks in publishing, including how to adapt and improve JATS and other standards. The collaborations for starting these documents came out of [_Notebooks Now!_][notebooks-now].
+
 :::
 
 :::{.callout-note}
 
 # Contributors
 
-The _Notebooks Now!_ working groups will be participating and leading the creation of these documents.
 Current contributors to these documents are:
 
 Rowan Cockett
@@ -52,7 +52,7 @@ Christopher Erdmann
 
 :::
 
-At _Notebooks Now!_, we looked at the academic publishing workflows around notebooks as a number of steps: (1) pre-submission, (2) submission & metadata, (3) editorial & peer review, and (4) production & post production. Each step of this workflow and how they fit together may be required to change or adapt when considering computational content in notebooks as a core publication artifact.
+At [_Notebooks Now!_][notebooks-now], we looked at the academic publishing workflows around notebooks as a number of steps: (1) pre-submission, (2) submission & metadata, (3) editorial & peer review, and (4) production & post production. Each step of this workflow and how they fit together may be required to change or adapt when considering computational content in notebooks as a core publication artifact.
 
 ![](images/workflow.png)
 
@@ -78,3 +78,4 @@ This work is licensed under a
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
+[notebooks-now]: https://data.agu.org/notebooks-now/
