@@ -24,31 +24,35 @@ Rowan Cockett
 : **Roles**: Writing – Original Draft Preparation, Software, Visualization
 : **Affiliation**: Curvenote Inc
 : **GitHub**: @rowanc1
+: **ORCID**: https://orcid.org/0000-0002-7859-8394
 
 J.J. Allaire
 : **Roles**: Writing – Original Draft Preparation, Software
 : **Affiliation**: Posit Software PBC
 : **GitHub**: @jjallaire
+: **ORCID**: https://orcid.org/0000-0003-0174-9868
 
 Charles Teague
 : **Roles**: Writing – Original Draft Preparation, Software
 : **Affiliation**: Posit Software PBC
 : **GitHub**: @dragonstyle
+: **ORCID**: https://orcid.org/0000-0001-8715-9476
 
 Jeffrey Beck
 : **Roles**: Writing – Review & Editing, Conceptualization
 : **Affiliation**: National Center for Biotechnology Information, National Library of Medicine, National Institutes of Health, Bethesda, MD 20894, USA.
 : **GitHub**: @jeffbeckncbi
-
-:::
+: **ORCID**: https://orcid.org/0000-0002-1798-9797
 
 Christopher Erdmann
 : **Roles**: Writing – Original Draft Preparation, Conceptualization
 : **Affiliation**: Michael J. Fox Foundation
 : **GitHub**: @libcce
+: **ORCID**: https://orcid.org/0000-0003-2554-180X
+
 :::
 
-At AGU Notebooks Now, we looked at the academic publishing workflows around notebooks as a number of steps: (1) pre-submission, (2) submission & metadata, (3) editorial & peer review, and (4) production & post production. Each step of this workflow and how they fit together may be required to change or adapt when considering computational content in notebooks as a core publication artifact.
+At _Notebooks Now!_, we looked at the academic publishing workflows around notebooks as a number of steps: (1) pre-submission, (2) submission & metadata, (3) editorial & peer review, and (4) production & post production. Each step of this workflow and how they fit together may be required to change or adapt when considering computational content in notebooks as a core publication artifact.
 
 ![](images/workflow.png)
 
