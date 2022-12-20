@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sub-article SYSTEM "https://jats.nlm.nih.gov/archiving/1.3/JATS-archivearticle1-3.dtd">
+<sub-article article-type="notebook" id="nb1">
+    <front-stub>
+        <title-group>
+            <article-title>Data access and processing</article-title>
+        </title-group>
+        <!-- The subarticle should maintain a link to the full, original notebook, e.g. on zenodo -->
+        <!-- this allows tools like mybinder, etc to easily integrate -->
+        <self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://zenodo.org/record/000001?notebook1.ipynb" content-type="ipynb" assigning-authority="zenodo">Available on Zenodo</self-uri>
+        <!-- Additionally, author may include the notebook file in the MECA bundle -->
+        <!-- BECK - I'd rather repeat self-uri to refer to the local version of the notebook file -->
+        <self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="notebooks/source.ipynb" content-type="notebook-file"/>
+    </front-stub>
+    <body>
+        <!-- Let's use sec for these cells. We can define the sec-type value and control how the typed sections are used with the Schematron -->
+        <sec id="nb1-cell-1" sec-type="notebook-content">
+            <sec id="nb1-working-with-interactive-charts-using-altair" disp-level="2">
+                <title>Working with interactive charts using Altair</title>
+                <p>
+                    This chart shows an example of using an interval selection to filter the contents of an
+                    attached histogram, allowing the user to see the proportion of items in each category within
+                    the selection. See more in the
+                    <ext-link ext-link-type="uri" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://altair-viz.github.io/gallery/selection_histogram.html">
+                        Altair Documentation
+                    </ext-link>
+                </p>
+            </sec>
+        </sec>
+        <sec id="nb1-cell-2" sec-type="notebook-code">
+            <code language="python" language-version="3.11.1" executable="yes" id="nb1-cell-2-code">
+                import altair as alt
+                from vega_datasets import data
+            </code>
+        </sec>
+        <sec id="nb1-cell-3" sec-type="notebook-code">
+            <code language="python" language-version="3.11.1" executable="yes" id="nb1-cell-3-code">
+                source = data.cars()
+                
+                points = alt.Chart(source).mark_point().encode(
+                x='Horsepower:Q',
+                y='Miles_per_Gallon:Q',
+                size='Acceleration',
+                color=alt.condition(brush, 'Origin:N', alt.value('lightgray'))
+                )
+                
+                points
+            </code>
+            <sec id="nb1-cell-3-output" sec-type="notebook-output">
+                <alternatives id="nb1-cell-3-output-0">
+                    <media specific-use="original-format" mimetype="application" mime-subtype="vnd.altair.v1+json" xmlns:xlink="http://www.w3.org/1999/xlink"  xlink:href="nb1-cell-3-altair.json" />
+                    <media specific-use="web" mimetype="text" mime-subtype="html" xlink:href="nb1-cell-3.html" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+                    <graphic specific-use="print" mimetype="image" mime-subtype="jpeg" xlink:href="nb1-cell-3.jpg" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+                </alternatives>
+            </sec>
+        </sec>
+    </body>
+</sub-article>
