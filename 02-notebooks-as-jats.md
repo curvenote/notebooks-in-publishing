@@ -189,7 +189,7 @@ The markup should be stripped from the code input, and put as a `caption` elemen
 
 ### Referencing an Executable Output
 
-The main `article` can reference executable content pointing to the output where the figure, table, or output came from. In many markup languages is possible using an `embed`, `import`, `include` or `glue` syntax. For computational outputs, there must be `xref` elements included to point to `notebook`, the `notebook-code` and the specific `notebook-output` used. These can either be explicit in the caption or for programmatic use these should be specifically tagged with the appropriate `custom-type` for the `xref`.
+The main `article` can reference executable content pointing to the output where the figure, table, or output came from. In many markup languages is possible using an `embed`, `import`, `include` or `glue` syntax. For computational outputs, there must be `xref` elements contained in a `<supplementary-material specific-use="notebook">` to point to `notebook`, the `notebook-code` and the specific `notebook-output` used. The `<supplementary-material />` should be in a paragraph in the caption of a figure or table and include references to the specific outputs that are used (which can be hidden `xref` elements). At this time, `xref`'s to notebook contents are `ref-type="custom"`, with the appropriate `custom-type` that matches the `article-type="notebook"` or `sec-type` (for code and outputs).
 
 The same `media` or `graphic` or `table` elements can be used as normal JATS, and point to the same output data.
 
@@ -199,17 +199,24 @@ The same `media` or `graphic` or `table` elements can be used as normal JATS, an
   <caption>
     <title>Orthogroup clustering analysis</title>
     <p>Lorem ipsum dolor sit amet</p>
-    <p>
-      <!-- Have a pointer back to the notebook -->
-      See methods in <xref ref-type="custom" custom-type="notebook" rid="nb1">Notebook 1</xref>
-      <!-- Have a pointer back to the specific cell -->
-      from <xref ref-type="custom" custom-type="notebook-code" rid="nb1-cell-3">Cell 4</xref>.
+    <p> <!-- <supplementary-material /> must be in a paragraph! -->
+      <!-- This is very likely auto generated, and should indicate it is explaining the notebook-source -->
+      <supplementary-material id="fig3-source" specific-use="notebook">
+        <label>Figure 3 — Notebook.</label>
+        <caption>
+          <title>Analysis for <xref ref-type="fig" rid="fig3">Figure 3</xref>.</title>
+          <!-- Have a pointer back to the notebook -->
+          See methods in <xref ref-type="custom" custom-type="notebook" rid="nb1">Notebook 1</xref>
+          <!-- Have a pointer back to the specific cell -->
+          from <xref ref-type="custom" custom-type="notebook-code" rid="nb1-cell-3">Cell 4</xref>
+          <!-- Specifically point to the notebook output that is used, no need to show that to the reader though! -->
+          <xref ref-type="custom" custom-type="notebook-output" rid="nb1-cell-3-output-0" />.
+        </caption>
+      </supplementary-material>
     </p>
   </caption>
   <!-- Support the same mime-bundles as notebooks with fallbacks for print -->
   <alternatives>
-    <!-- Specifically point to the notebook output that is used -->
-    <xref ref-type="custom" custom-type="notebook-output" rid="nb1-cell-3-output-0" />
     <media specific-use="original-format" mimetype="application" mime-subtype="vnd.plotly.v1+json" xlink:href="nb1-cell-3-plotly.json" />
     <media specific-use="web" mimetype="text" mime-subtype="html" xlink:href="nb1-cell-3.html" />
     <graphic specific-use="print" mimetype="image" mime-subtype="jpeg" xlink:href="nb1-cell-3.jpg" />
@@ -228,7 +235,7 @@ For example, in the case of equations, such as a computed `sympy` equation inclu
 </disp-formula>
 ```
 
-This same approach can be taken for other computed elements, such as tables in a `<table-wrap>`.
+TODO: This same approach can be taken for other computed elements, such as tables in a `<table-wrap>`.
 
 ### Inline Execution / Variables
 
