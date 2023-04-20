@@ -75,7 +75,7 @@ At a high level a notebook consists of (1) text, which is usually a variant of m
 
 ### Text
 
-Text is well specified by JATS, and a rich markdown format (e.g. Quarto, Pandoc, or MyST Markdown) should be used here. This can be parsed into a `sec` element with a `sec-type` of `notebook-content`. The notebook cell as [sec](https://jats.nlm.nih.gov/articleauthoring/tag-library/1.3/element/sec.html), can included nested sections, non-executable code, figures, nested boxed text (as callouts or admonitions), or any other narrative content. Note, it is common that these notebook sections may not have a specific title, this is only allowed in the [Archiving](https://jats.nlm.nih.gov/archiving/tag-library/1.3/attribute/disp-level.html) tag set.
+Text is well specified by JATS, and a rich markdown format (e.g. Quarto, Pandoc, or MyST Markdown) should be used here. This can be parsed into a `sec` element with a `sec-type` of `notebook-content`. The notebook cell as [sec](https://jats.nlm.nih.gov/archiving/tag-library/1.3/element/sec.html), can included nested sections, non-executable code, figures, nested boxed text (as callouts or admonitions), or any other narrative content. Note, it is common that these notebook sections may not have a specific title, this is only allowed in the [Archiving](https://jats.nlm.nih.gov/archiving/tag-library/1.3/attribute/disp-level.html) tag set.
 
 ```xml
 <sec id="nb1-cell-1" sec-type="notebook-content">
@@ -99,7 +99,7 @@ By wrapping each notebook markdown cell in a `sec` we are choosing to value the 
 
 ### Code
 
-Code is also well specified by JATS, however it needs to be optionally associated with the executable output. Executable code should have the `executable` attribute ([docs](https://jats.nlm.nih.gov/articleauthoring/tag-library/1.3/attribute/executable.html)) on a [code](https://jats.nlm.nih.gov/articleauthoring/tag-library/1.3/element/code.html) element. Each element of executable code should also be included in a `sec` element that is described with a `sec-type` of `notebook-code`. The notebook cell must include at least a single `code` element that is `executable`, the `language` and `language-version` should be included here.
+Code is also well specified by JATS, however it needs to be optionally associated with the executable output. Executable code should have the `executable` attribute ([docs](https://jats.nlm.nih.gov/archiving/tag-library/1.3/attribute/executable.html)) on a [code](https://jats.nlm.nih.gov/archiving/tag-library/1.3/element/code.html) element. Each element of executable code should also be included in a `sec` element that is described with a `sec-type` of `notebook-code`. The notebook cell must include at least a single `code` element that is `executable`, the `language` and `language-version` should be included here.
 
 If the `code` does not have associate outputs, for example when importing libraries, then it can be stand-alone in a `sec` element.
 
