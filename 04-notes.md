@@ -4,6 +4,41 @@ description: ''
 date: 2022-12-09
 ---
 
+# April 21, 2023
+
+Meeting: Rowan, Franklin, Charles
+
+**Agenda**
+
+- boxed-text --> sections
+  - https://github.com/curvenote/notebooks-in-publishing/pull/19
+  - sec "content-type" --> sec-type
+- Don't nest outputs in new section
+  - https://github.com/curvenote/notebooks-in-publishing/pull/20
+- figure supplementary-material (xref not allowed)
+  - https://github.com/curvenote/notebooks-in-publishing/pull/21
+- Propose inline variables as notes
+  - https://github.com/curvenote/notebooks-in-publishing/pull/22
+
+**Discussion**
+
+- articles vs sub-articles, what is a section (e.g. narrative takes priority)
+  - hide the cells?
+  - backmatter cells?
+  - Action: get further, show examples, then decide.
+- Transform graphics to figures in sections? Should remove this?
+  - Action: Wait till we have more examples.
+- show jats-xml validation
+  - jats validate myJats.xml
+- discussion on schematron (examples, and why)
+  - difficult to use, and not helpful for source document errors
+
+**Next Steps**
+
+- Get back to examples, and move slightly more into end-to-end tests
+  - math, graphics
+- Metadata next week (general JATS improvements)
+
 # Presentation by J.J. and Charles:
 
 [December 09, 2022](./2022-12-09_Publishing_Notebooks_Using_JATS_%20and_MECA.pdf)
