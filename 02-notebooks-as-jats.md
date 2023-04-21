@@ -17,7 +17,7 @@ From within the main `article` within the JATS XML, `xref`s to the `sub-article`
 
 :::{.callout-note}
 
-This is a very rough `DRAFT`, as we get more authors, we can add stonger language like "we recommend" etc. That may have leaked in already.
+This is a very rough `DRAFT`, as we get more authors, we can add stronger language like "we recommend" etc. That may have leaked in already.
 
 :::
 
@@ -142,7 +142,7 @@ A code cell in a notebook can have any number of **outputs** (see [nbformat](htt
 
 ### Multiple Outputs
 
-For cells with multiple outputs, these should be included in the single `<sec sec-type="notebook-output">` with each element in that list having a specific, numbered ID starting at zero such that it can be referred to independently. In this way downstream viewing application can refer to either the entire cell, the outputs only, or a single output in the list.
+Cells with multiple outputs should contain each output as a `<sec sec-type="notebook-output">`, these are nested inside of the `<sec sec-type="notebook-code">` and should be in the same order as the original notebook. Each output should include an ID so downstream applications can refer to either the entire cell or a single output in the list.
 
 ```xml
 <sec id="nb1-cell-3" sec-type="notebook-code">
@@ -189,7 +189,7 @@ The markup should be stripped from the code input, and put as a `caption` elemen
 
 ### Referencing an Executable Output
 
-The main `article` can reference executable content pointing to the output where the figure, table, or output came from. In many markup languages is possible using an `embed`, `import`, `include` or `glue` syntax. For computational outputs, there must be `xref` elements included to point to `notebook`, the `notebook-code` and the specific `notebook-output` used. These can either be explicit in the caption or for programatic use these should be specifically tagged with the appropriate `custom-type` for the `xref`.
+The main `article` can reference executable content pointing to the output where the figure, table, or output came from. In many markup languages is possible using an `embed`, `import`, `include` or `glue` syntax. For computational outputs, there must be `xref` elements included to point to `notebook`, the `notebook-code` and the specific `notebook-output` used. These can either be explicit in the caption or for programmatic use these should be specifically tagged with the appropriate `custom-type` for the `xref`.
 
 The same `media` or `graphic` or `table` elements can be used as normal JATS, and point to the same output data.
 
@@ -234,7 +234,7 @@ This same approach can be taken for other computed elements, such as tables in a
 
 **TODO** How to support inline elements like `` `r radius` ``, for example in [knitr](https://quarto.org/docs/computations/execution-options.html#knitr). Jupyter will eventually have this and it would be nice to have the original mapped back in? There is `monospace` or `inline-media`, these could be used in combination with the `xref` approach above if they are explicitly referencing an output, but that isn't how tools like quarto/myst/jupyter are currently designed, so this needs more thought.
 
-This would privide rich references, to specific numbers in an article, and could even be used for inline widgets in articles with alternatives/fallbacks.
+This would provide rich references, to specific numbers in an article, and could even be used for inline widgets in articles with alternatives/fallbacks.
 
 For example, `` The study had `r num` participants ``, can we reference a parameter from a notebook, or some other variable in a table?
 
