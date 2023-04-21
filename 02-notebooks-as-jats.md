@@ -39,10 +39,10 @@ This is a very rough `DRAFT`, as we get more authors, we can add stonger languag
     <supplementary-material xlink:href="notebooks/source.ipynb" specific-use="document" mimetype="application" mime-subtype="x-ipynb+json" />
   </front-stub>
   <body>
-    <!-- Each cell is wrapped in a single boxed-text element, described below -->
-    <boxed-text id="nb1-cell-0">...</boxed-text>
-    <boxed-text id="nb1-cell-1">...</boxed-text>
-    <boxed-text id="nb1-cell-2">...</boxed-text>
+    <!-- Each cell is wrapped in a single sec element, described below -->
+    <sec id="nb1-cell-0">...</sec>
+    <sec id="nb1-cell-1">...</sec>
+    <sec id="nb1-cell-2">...</sec>
   </body>
 </sub-article>
 ```
@@ -75,52 +75,49 @@ At a high level a notebook consists of (1) text, which is usually a variant of m
 
 ### Text
 
-Text is well specified by JATS, and a rich markdown format (e.g. Quarto, Pandoc, or MyST Markdown) should be used here. This can be parsed into a `boxed-text` element with a `content-type` of `notebook-content`. The notebook cell as [boxed-text](https://jats.nlm.nih.gov/articleauthoring/tag-library/1.3/element/boxed-text.html), can included nested sections, non-executable code, figures, nested boxed text (as callouts or admonitions), or any other narrative content.
+Text is well specified by JATS, and a rich markdown format (e.g. Quarto, Pandoc, or MyST Markdown) should be used here. This can be parsed into a `sec` element with a `sec-type` of `notebook-content`. The notebook cell as [sec](https://jats.nlm.nih.gov/archiving/tag-library/1.3/element/sec.html), can included nested sections, non-executable code, figures, nested boxed text (as callouts or admonitions), or any other narrative content. Note, it is common that these notebook sections may not have a specific title, this is only allowed in the [Archiving](https://jats.nlm.nih.gov/archiving/tag-library/1.3/attribute/disp-level.html) tag set.
 
 ```xml
-<boxed-text id="nb1-cell-1" content-type="notebook-content">
-  <sec id="nb1-working-with-interactive-charts-using-altair" disp-level="2">
-    <title>Working with interactive charts using Altair</title>
-    <p>
-      This chart shows an example of using an interval selection to filter the contents of an
-      attached histogram, allowing the user to see the proportion of items in each category within
-      the selection. See more in the
-      <ext-link ext-link-type="uri" xlink:href="https://altair-viz.github.io/gallery/selection_histogram.html">
-        Altair Documentation
-      </ext-link>
-    </p>
-  </sec>
-</boxed-text>
+<sec id="nb1-cell-1" sec-type="notebook-content">
+  <p>
+    This chart shows an example of using an interval selection to filter the contents of an
+    attached histogram, allowing the user to see the proportion of items in each category within
+    the selection. See more in the
+    <ext-link ext-link-type="uri" xlink:href="https://altair-viz.github.io/gallery/selection_histogram.html">
+      Altair Documentation
+    </ext-link>
+  </p>
+</sec>
 ```
 
 :::{.callout-caution}
 
 ## Note
 
-By wrapping each notebook markdown cell in a `boxed-text` we are choosing to value the structure of the notebook over the structure of section nesting. The result of this choice is the header depth needs to be explicitly preserved (i.e. using `disp-level`, which is not in the Article Authoring tag set but is provided in [Archiving](https://jats.nlm.nih.gov/archiving/tag-library/1.3/attribute/disp-level.html)). Using the `disp-level` the translation to and from markdown/notebook should be lossless.
+By wrapping each notebook markdown cell in a `sec` we are choosing to value the structure of the notebook over the structure of section nesting. The result of this choice is the header depth needs to be explicitly preserved (i.e. using `disp-level`, which is not in the Article Authoring tag set but is provided in [Archiving](https://jats.nlm.nih.gov/archiving/tag-library/1.3/attribute/disp-level.html)). Using the `disp-level` the translation to and from markdown/notebook should be lossless.
 :::
 
 ### Code
 
-Code is also well specified by JATS, however it needs to be optionally associated with the executable output. Executable code should have the `executable` attribute ([docs](https://jats.nlm.nih.gov/articleauthoring/tag-library/1.3/attribute/executable.html)) on a [code](https://jats.nlm.nih.gov/articleauthoring/tag-library/1.3/element/code.html) element. Each element of executable code should also be included in a `boxed-text` element that is described with a `content-type` of `notebook-code`. The notebook cell must include at least a single `code` element that is `executable`, the `language` and `language-version` should be included here.
+Code is also well specified by JATS, however it needs to be optionally associated with the executable output. Executable code should have the `executable` attribute ([docs](https://jats.nlm.nih.gov/archiving/tag-library/1.3/attribute/executable.html)) on a [code](https://jats.nlm.nih.gov/archiving/tag-library/1.3/element/code.html) element. Each element of executable code should also be included in a `sec` element that is described with a `sec-type` of `notebook-code`. The notebook cell must include at least a single `code` element that is `executable`, the `language` and `language-version` should be included here.
 
-If the `code` does not have associate outputs, for example when importing libraries, then it can be stand-alone in a `boxed-text` element.
+If the `code` does not have associate outputs, for example when importing libraries, then it can be stand-alone in a `sec` element.
 
 ```xml
-<boxed-text id="nb1-cell-2" content-type="notebook-code">
+<sec id="nb1-cell-2" sec-type="notebook-code">
   <code language="python" language-version="3.11.1" executable="yes" id="nb1-cell-2-code">
     import altair as alt
     from vega_datasets import data
   </code>
-</boxed-text>
+</sec>
 ```
 
 ### Outputs
 
-A code cell in a notebook can have any number of **outputs** (see [nbformat](https://nbformat.readthedocs.io/en/latest/format_description.html#code-cells) as an example), we suggest using a nested `boxed-text` element to capture this list, as they may include text outputs, pre-formatted text (`preformat`), equations (`disp-formula`), graphics and/or interactive media. It is common that notebook outputs provide media in a number of alternative formats (e.g. an interactive HTML figure as well as an image).
+A code cell in a notebook can have any number of **outputs** (see [nbformat](https://nbformat.readthedocs.io/en/latest/format_description.html#code-cells) as an example), we suggest using a nested `sec` element to capture each output, as they may include text outputs, pre-formatted text (`preformat`), equations (`disp-formula`), graphics and/or interactive media. It is common that notebook outputs provide media in a number of alternative formats (e.g. an interactive HTML figure as well as an image).
 
 ```xml
-<boxed-text id="nb1-cell-3" content-type="notebook-code">
+<sec id="nb1-cell-3" sec-type="notebook-code">
   <code language="python" language-version="3.11.1" executable="yes" id="nb1-cell-3-code">
     source = data.cars()
 
@@ -133,44 +130,36 @@ A code cell in a notebook can have any number of **outputs** (see [nbformat](htt
 
     points
   </code>
-  <boxed-text id="nb1-cell-3-output" content-type="notebook-output">
-    <alternatives id="nb1-cell-3-output-0">
+  <sec id="nb1-cell-3-output-0" sec-type="notebook-output">
+    <alternatives>
       <media specific-use="original-format" mimetype="application" mime-subtype="vnd.altair.v1+json" xlink:href="nb1-cell-3-altair.json" />
       <media specific-use="web" mimetype="text" mime-subtype="html" xlink:href="nb1-cell-3.html" />
       <graphic specific-use="print" mimetype="image" mime-subtype="jpeg" xlink:href="nb1-cell-3.jpg"/>
     </alternatives>
-  </boxed-text>
-</boxed-text>
+  </sec>
+</sec>
 ```
-
-:::{.callout-caution}
-**Note**
-
-The “mime-bundle” of `alternatives` is not allowed to be contained in a `boxed-text` element in Article Authoring, but this is allowed in the more permissive tag set of [Archiving](https://jats.nlm.nih.gov/archiving/tag-library/1.3/element/alternatives.html).
-:::
 
 ### Multiple Outputs
 
-For cells with multiple outputs, these should be included in the single `<boxed-text content-type="notebook-output">` with each element in that list having a specific, numbered ID starting at zero such that it can be referred to independently. In this way downstream viewing application can refer to either the entire cell, the outputs only, or a single output in the list.
+For cells with multiple outputs, these should be included in the single `<sec sec-type="notebook-output">` with each element in that list having a specific, numbered ID starting at zero such that it can be referred to independently. In this way downstream viewing application can refer to either the entire cell, the outputs only, or a single output in the list.
 
 ```xml
-<boxed-text id="nb1-cell-3" content-type="notebook-code">
+<sec id="nb1-cell-3" sec-type="notebook-code">
   <code language="python" language-version="3.11.1" executable="yes" id="nb1-cell-3-code">
     ...
   </code>
-  <boxed-text id="nb1-cell-3-output" content-type="notebook-output">
-    <output-0 id="nb1-cell-3-output-0" />
-    <output-1 id="nb1-cell-3-output-1" />
-    <output-2 id="nb1-cell-3-output-2" />
-  </boxed-text>
-</boxed-text>
+  <sec id="nb1-cell-3-output-0" sec-type="notebook-output">...</sec>
+  <sec id="nb1-cell-3-output-1" sec-type="notebook-output">...</sec>
+  <sec id="nb1-cell-3-output-2" sec-type="notebook-output">...</sec>
+</sec>
 ```
 
 **Cell Metadata** (TODO)
 : It is likely safe to remove cell metadata for archival purposes? There is a [custom-meta-group](https://jats.nlm.nih.gov/archiving/tag-library/1.3/element/custom-meta-group.html) that can contain arbitrary name/value pairs, however, that is aimed to be included only in the [front-stub](https://jats.nlm.nih.gov/archiving/tag-library/1.3/element/front-stub.html) or [article-meta](https://jats.nlm.nih.gov/archiving/tag-library/1.3/element/article-meta.html). For lossless transformation, we could also put this in a nested media or something?
 
 **Raw Cells** (TODO)
-: Include these as a `preformat` element inside of a `boxed-text` instead of a `code`?
+: Include these as a `preformat` element inside of a `sec` instead of a `code`?
 
 ### Format Outputs for Viewing & Indexing
 
@@ -187,15 +176,15 @@ For example, captions can be included in some markup languages. If that is inclu
 The markup should be stripped from the code input, and put as a `caption` element, with appropriate markup as a `fig` element. This same functionality is being discussed in Jupyter as `Figure` display object, which will be equivalent but in the output metadata.
 
 ```xml
-<boxed-text id="nb1-cell-4" content-type="notebook-code">
+<sec id="nb1-cell-4" sec-type="notebook-code">
   <code>...</code>
-  <boxed-text id="nb1-cell-4-output" content-type="notebook-output">
+  <sec id="nb1-cell-4-output" sec-type="notebook-output">
     <fig id="nb1-cell-4-output-0">
       <caption><title>A line plot on a polar axis</title></caption>
       <graphic specific-use="print" mimetype="image" mime-subtype="jpeg" xlink:href="nb1-cell-4.jpg"/>
     </fig>
-  </boxed-text>
-</boxed-text>
+  </sec>
+</sec>
 ```
 
 ### Referencing an Executable Output
