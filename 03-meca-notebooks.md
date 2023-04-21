@@ -28,7 +28,7 @@ We specifically envisision that MECA files which include JATS XML with notebook 
 While MECA files may include arbitrary files (as long as they are referenced from with the `manifest.xml` file), we propose that by convention, the following files be placed in the following paths and referenced in the `manifest.xml` using the following `item-type`.
 
 | Item                     | Folder      | `item-type`            |
-|--------------------------|-------------|------------------------|
+| ------------------------ | ----------- | ---------------------- |
 | Notebook (.`ipynb` file) | `notebooks` | `notebook`             |
 | REES compliant folder    | `sources`   | `notebook-environment` |
 
@@ -37,7 +37,7 @@ While MECA files may include arbitrary files (as long as they are referenced fro
 The following table outlines the contents of a sample MECA file for an article.
 
 | File Name                                       | File Type                      |
-|---------------------------------------|---------------------------------|
+| ----------------------------------------------- | ------------------------------ |
 | `123e4567-e89b-12d3-a456-426655440000-MECA.zip` | Archive file                   |
 | `manifest.xml`                                  | Manifest metadata file         |
 | `demoarticle.xml`                               | Article metadata file          |

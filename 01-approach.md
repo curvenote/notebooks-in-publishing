@@ -14,13 +14,13 @@ date: 2022-12-09
 <graphic mimetype="image" mime-subtype="tiff" xlink:href="some_image.tif" />
 ```
 
-How to gain access to this image is underspecified by JATS (as the standard is focused more on _text_\-mining), with each publisher/provider using a different system for gaining access to images (e.g. dynamic image transforms to resize or change to more web-appropriate formats, like `webp`). 
+How to gain access to this image is underspecified by JATS (as the standard is focused more on _text_\-mining), with each publisher/provider using a different system for gaining access to images (e.g. dynamic image transforms to resize or change to more web-appropriate formats, like `webp`).
 
 We propose using JATS XML to represent a journal article produced using computational notebooks, to include notebook information (source code and outputs) within the JATS XML, and to use specific JATS XML elements to refer to the notebook and computations that were used when producing the article.
 
 ### MECA
 
-JATS provides no standardized way to download the full manuscript with all data. In this respect, ideas from the Manuscript Exchange Common Approach ([MECA](https://www.niso.org/standards-committees/meca)) could be adopted to provide a full container for notebooks and other computational requirements. MECA is a National Information Standards Organization (NISO) project which outlines a common means to easily transfer manuscripts and accompanying files between manucript systems. 
+JATS provides no standardized way to download the full manuscript with all data. In this respect, ideas from the Manuscript Exchange Common Approach ([MECA](https://www.niso.org/standards-committees/meca)) could be adopted to provide a full container for notebooks and other computational requirements. MECA is a National Information Standards Organization (NISO) project which outlines a common means to easily transfer manuscripts and accompanying files between manucript systems.
 
 A MECA file is a single zip file which contains:
 
@@ -31,7 +31,6 @@ A MECA file is a single zip file which contains:
 - There are other optional files as well, read more [here](https://groups.niso.org/higherlogic/ws/public/download/23902/NISO_RP-30-2020_Manuscript_Exchange_Common_Approach_MECA.pdf)
 
 We propose using a MECA file as the single file format for bundling a JATS XML file with it dependencies (external figure images, source notebooks, etc...) for submission to a manuscript system.
-
 
 +++
 
