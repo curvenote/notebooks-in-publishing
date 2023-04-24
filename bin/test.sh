@@ -6,7 +6,8 @@ dir="./examples"
 test=${1:-jats}
 
 # Initialize an array to collect the exit codes
-exit_codes=()
+set -- # initialize the array
+exit_codes=
 
 # Loop over each file in the directory
 for folder in $dir/*; do
@@ -15,13 +16,13 @@ for folder in $dir/*; do
         # Run the jats command with the appropriate arguments
         if ! jats test "$folder/$test.xml" --cases "$folder/tests.yml"; then
             # If the jats command fails, collect the exit code in the array
-            exit_codes+=($?)
+            exit_codes="${exit_codes} ${?}"
         fi
     fi
 done
 
 # Check if any of the jats commands failed (i.e., if the array is not empty)
-if [ ${#exit_codes[@]} -gt 0 ]; then
+if [ -n "${exit_codes}" ]; then
     echo "At least one test failed."
     exit 1
 fi
