@@ -64,9 +64,10 @@ When considering how to include notebooks in publishing, identifying how to incl
 
 ## Contents
 
-- [Approach](./01-approach.md)
-- [Notebooks as JATS](./02-notebooks-as-jats.md)
-- [Working Notes](./03-notes.md)
+- [Approach](./docs/01-approach.md)
+- [Notebooks as JATS](./docs/02-notebooks-as-jats.md)
+- [MECA Notebooks](./docs/03-meca-notebooks.md)
+- [Working Notes](./docs/04-notes.md)
 
 ---
 

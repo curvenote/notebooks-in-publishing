@@ -1,0 +1,69 @@
+cases:
+  - title: Correct article title
+    selectAll: 'front > article-meta > title-group > article-title > *'
+    equals:
+      - type: text
+        value: Plotting the coherence of two signals
+  - title: Correct article subtitle
+    selectAll: 'front > article-meta > title-group > subtitle > *'
+    equals:
+      - type: text
+        value: Examples using matplotlib
+  - title: The markdown cell text was parsed consistently
+    selectAll: 'body > p > *'
+    equals:
+      - type: text
+        value: An example showing how to plot the coherence of two signals (
+      - type: ext-link
+        ext-link-type: uri
+        xlink:href: https://matplotlib.org/stable/gallery/lines_bars_and_markers/cohere.html
+      - type: text
+        value: ).
+  - title: The link has the correct text
+    selectAll: 'ext-link > *'
+    equals:
+      - type: text
+        value: source
+  - title: The code is present and not malformed
+    select: 'body code'
+    equals:
+      value: |-
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        # Fixing random state for reproducibility
+        np.random.seed(19680801)
+
+        dt = 0.01
+        t = np.arange(0, 30, dt)
+        nse1 = np.random.randn(len(t))                 # white noise 1
+        nse2 = np.random.randn(len(t))                 # white noise 2
+
+        # Two signals with a coherent part at 10 Hz and a random part
+        s1 = np.sin(2 * np.pi * 10 * t) + nse1
+        s2 = np.sin(2 * np.pi * 10 * t) + nse2
+
+        fig, axs = plt.subplots(2, 1)
+        axs[0].plot(t, s1, t, s2)
+        axs[0].set_xlim(0, 2)
+        axs[0].set_xlabel('Time')
+        axs[0].set_ylabel('s1 and s2')
+        axs[0].grid(True)
+
+        cxy, f = axs[1].cohere(s1, s2, 256, 1. / dt)
+        axs[1].set_ylabel('Coherence')
+
+        fig.tight_layout()
+        plt.show()
+  - title: The code is python
+    select: 'body code'
+    equals:
+      type: code
+  - title: There is not any boxed-text
+    select: 'boxed-text'
+    equals: null
+  - title: The graphic is a PNG
+    select: 'graphic'
+    equals:
+      mimetype: image
+      mime-subtype: png

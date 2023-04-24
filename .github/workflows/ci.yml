@@ -1,0 +1,14 @@
+name: CI
+jobs:
+  jats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y libxml2-utils
+      - run: npm install -g jats-xml
+      - run: make test-base

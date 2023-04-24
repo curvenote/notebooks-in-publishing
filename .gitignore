@@ -1,1 +1,6 @@
 _build
+.ipynb_checkpoints
+examples/*/files
+examples/*/myst.xml
+examples/*/quarto.xml
+examples/*/*_files
