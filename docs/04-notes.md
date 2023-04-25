@@ -4,6 +4,47 @@ description: ''
 date: 2022-12-09
 ---
 
+# April 25, 2023
+
+Meeting: Rowan, Franklin, Charles, J.J.
+
+- Inline execution
+  - This looks good.
+- Showing progress on unit tests for feedback on utility
+  - Looks like a good start, continue! 🚀
+- Moving to a single format for representing articles and sub-articles
+  - Need to figure out the outputs as figures/standalone, which might be different
+
+Notebook values (e.g. glue or json):
+
+```xml
+<p>p = <xref ref-type="custom" custom-type="notebook" rid="nb1">0.04</xref></p>
+```
+
+**Question:** Should we duplicate the content out of the article, and have a companion article that is notebook-shaped?
+
+**Thinking:** This is about publishing rich articles based on notebooks.
+
+article
+: if this includes code, it is in the paper
+
+- paper (with cross refs) similar to the PDF
+  notebooks
+  : these serialize the content
+- sub article (this is the article, duplicated)
+- sub article
+- sub article
+
+Scientific discourse that is notebook backed.
+
+Project:
+
+- paper.qmd
+- notebook.ipynb
+- notebook1.ipynb
+
+**Conclusion:** Our conclusion out of the meeting is to try and make articles and sub-articles the same, without duplicating the code or content.
+
 # April 21, 2023
 
 Meeting: Rowan, Franklin, Charles
