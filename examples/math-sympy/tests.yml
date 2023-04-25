@@ -1,0 +1,14 @@
+cases:
+  - title: Correct article title
+    selectAll: 'front > article-meta > title-group > article-title > *'
+    equals:
+      - type: text
+        value: Math Outputs
+  - title: The code is correct
+    select: 'code'
+    equals:
+      value: |-
+        from sympy import symbols, expand
+        x, y = symbols('x y')
+        expr = x + 2*y
+        polinomial = x*expr

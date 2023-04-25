@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "http://jats.nlm.nih.gov/publishing/1.3/JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ali="http://www.niso.org/schemas/ali/1.0/" dtd-version="1.3" xml:lang="en">
+  <front>
+    <article-meta>
+      <title-group>
+        <article-title>Basic markdown typography</article-title>
+        <subtitle>Examples using markdown</subtitle>
+      </title-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="inline-text-formatting">
+      <title>Inline Text Formatting</title>
+      <p>
+        <bold>strong</bold>, 
+        <italic>emphasis</italic>, 
+        <monospace>literal text</monospace>, *escaped symbols*
+      </p>
+    </sec>
+    <sec id="lists">
+      <title>Lists</title>
+      <list list-type="bullet">
+        <list-item>
+          <p>Lists can start with 
+            <monospace>-</monospace> or 
+            <monospace>*</monospace>
+            <list list-type="bullet">
+              <list-item>
+                <p>My other, nested</p>
+              </list-item>
+              <list-item>
+                <p>bullet point list!</p>
+              </list-item>
+            </list>
+          </p>
+        </list-item>
+      </list>
+      <list list-type="order">
+        <list-item>
+          <p>My numbered list</p>
+        </list-item>
+        <list-item>
+          <p>has two points</p>
+        </list-item>
+      </list>
+    </sec>
+    <sec id="definition-lists">
+      <title>Definition Lists</title>
+      <def-list>
+        <def-item>
+          <term>Term 1</term>
+          <def>
+            <p>Definition</p>
+          </def>
+        </def-item>
+        <def-item>
+          <term>Term 2</term>
+          <def>
+            <p>Definition</p>
+          </def>
+        </def-item>
+      </def-list>
+    </sec>
+    <sec id="footnotes">
+      <title>Footnotes</title>
+      <list list-type="bullet">
+        <list-item>
+          <p>A footnote reference
+            <xref ref-type="fn" rid="fn-myref">1</xref>
+          </p>
+        </list-item>
+        <list-item>
+          <p>Manually-numbered footnote reference
+            <xref ref-type="fn" rid="fn-3">3</xref>
+          </p>
+        </list-item>
+      </list>
+    </sec>
+  </body>
+  <back>
+    <fn-group>
+      <fn id="fn-myref">
+        <label>1</label>
+        <p>This is an auto-numbered footnote definition.</p>
+      </fn>
+      <fn id="fn-3">
+        <label>3</label>
+        <p>This is a manually-numbered footnote definition.</p>
+      </fn>
+    </fn-group>
+  </back>
+</article>

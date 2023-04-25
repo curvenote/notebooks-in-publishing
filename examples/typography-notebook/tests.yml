@@ -1,0 +1,26 @@
+cases:
+  - title: Correct article title
+    selectAll: 'front > article-meta > title-group > article-title > *'
+    equals:
+      - type: text
+        value: Basic markdown typography
+  - title: Correct article subtitle
+    select: 'body > sec > title > *'
+    equals:
+      - type: text
+        value: Inline Text Formatting
+  - title: The lists are of the correct type
+    selectAll: 'body > sec[id="lists"] > list'
+    equals:
+      - list-type: bullet
+      - list-type: order
+  - title: The terms for the definitions are included
+    selectAll: 'term > *'
+    equals:
+      - type: text
+        value: Term 1
+      - type: text
+        value: Term 2
+  - title: The footnotes group exists
+    select: 'back > fn-group'
+    equals: {}
