@@ -286,7 +286,7 @@ When {eval}`polynomial` is expanded, it becomes {eval}`expand(polynomial)`.
   </code>
 </sec>
 <p>
-  When <xref ref-type="custom" custom-type="expression" rid="eval-1"><inline-formula><tex-math><![CDATA[ x \\left(x + 2 y\\right) ]]></tex-math></xref> is expanded, it becomes <xref ref-type="custom" custom-type="expression" rid="eval-2"><inline-formula><tex-math><![CDATA[ x^{2} + 2 x y ]]></tex-math></xref>.
+  When <xref ref-type="custom" custom-type="expression" rid="eval-1"><inline-formula><tex-math><![CDATA[ x \\left(x + 2 y\\right) ]]></tex-math></inline-formula></xref> is expanded, it becomes <xref ref-type="custom" custom-type="expression" rid="eval-2"><inline-formula><tex-math><![CDATA[ x^{2} + 2 x y ]]></tex-math></inline-formula></xref>.
 </p>
 ...
 <back>
