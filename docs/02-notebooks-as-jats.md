@@ -57,14 +57,6 @@ If the document is stored by the publisher directly, a `supplementary-material` 
 
 **TODO:** specific-use: the notebooks can either be the source or an export format (e.g. in using quarto/rmd). Should we list both here, with different content types?
 
-### Notebook as the main article
-
-It is possible to use a notebook to author the main article, however, the structure of the JATS in this case is _not_ dictated by the notebook structure, but by the narrative structure.
-
-**TODO** Expand this section/idea. This allows for things like inline execution in the main article, but has different constraints.
-
-The following sections describe notebooks as `sub-article`s, where the structure is designed to recreate the notebook, rather than be constrained by current practices for sections, etc.
-
 ## Components of a Notebook
 
 At a high level a notebook consists of (1) text, which is usually a variant of markdown; (2) executable code cells; and (3) a list of outputs from the execution (many of which can be dynamic or interactive). A notebook also requires an execution environment (with loaded dependencies), and at least one language (e.g. Python, R, Julia, etc.) and version of that language, and can depend on external packages and data.
@@ -237,15 +229,89 @@ For example, in the case of equations, such as a computed `sympy` equation inclu
 
 TODO: This same approach can be taken for other computed elements, such as tables in a `<table-wrap>`.
 
-### Inline Execution / Variables
+### Inline Execution & Variables
 
-**TODO** How to support inline elements like `` `r radius` ``, for example in [knitr](https://quarto.org/docs/computations/execution-options.html#knitr). Jupyter will eventually have this and it would be nice to have the original mapped back in? There is `monospace` or `inline-media`, these could be used in combination with the `xref` approach above if they are explicitly referencing an output, but that isn't how tools like quarto/myst/jupyter are currently designed, so this needs more thought.
+Semantic publishing tools like Quarto and MyST have the ability to add inline expressions that can be evaluated.
+This allows authors to directly refer to variables (e.g. the number of participants or a statistical result).
+The results of these computations as well as their source should be recorded in JATS using the `<notes>` field in the `<back>` element of the `article` or `sub-article`.
 
-This would provide rich references, to specific numbers in an article, and could even be used for inline widgets in articles with alternatives/fallbacks.
+This provides rich references to specific numbers in an article, and can even be used for inline widgets in articles with alternatives/fallbacks for static renderers (e.g. PDF).
+For example, `` The study had {eval}`45 - 3` participants ``, is evaluated to show the text `42`,
+and the source of that calculation can be shown to the reader as well as being machine-readable and re-computable on new data in the future.
 
-For example, `` The study had `r num` participants ``, can we reference a parameter from a notebook, or some other variable in a table?
+```xml
+<p>
+  The study had <xref ref-type="custom" custom-type="expression" rid="eval-15">42</xref> participants.
+</p>
+...
+<back>
+  <notes notes-type="expressions">
+    <sec sec-type="expression" id="eval-15">
+      <code code-type="notebook-code" language="python" language-version="3.11.1" executable="yes" id="eval-15-code">
+        45 - 3
+      </code>
+      <sec sec-type="notebook-output" id="eval-15-output-0">
+        <preformat>42</preformat>
+      </sec>
+    </sec>
+  </notes>
+</back>
+```
 
-These could be collected at the top of each article and then referenced, somewhat similar to footnotes?
+### Notebook as the main article
+
+It is possible to use a notebook to author the main article, however, the structure of the JATS in this case is _not_ dictated by the notebook structure, but by the narrative structure. The executable cells are kept in place in the document as hidden sections `<sec sec-type="notebook-code" specific-use="execution">` depending on the intent of the author.
+
+Note: the boundaries of the markdown cells could be kept with `<milestone-start rationale="Markdown cell boundary." specific-use="notebook-content">`
+https://jats.nlm.nih.gov/archiving/tag-library/1.3/element/milestone-start.html
+
+For example, an author may want to evaluate a math expression dynamically rather than write it by hand, this can be done concisely in a markup language, evaluated and stored in the `<notes>` in the `<back>` of the article.
+
+```python
+from sympy import symbols, expand, factor
+x, y = symbols('x y')
+polynomial = x*(x + 2*y)
+```
+
+```markdown
+When {eval}`polynomial` is expanded, it becomes {eval}`expand(polynomial)`.
+```
+
+```xml
+<sec id="nb1-cell-2" sec-type="notebook-code" specific-use="evaluation">
+  <code language="python" language-version="3.11.1" executable="yes" id="nb1-cell-2-code">
+    from sympy import symbols, expand, factor
+    x, y = symbols('x y')
+    polynomial = x*(x + 2*y)
+  </code>
+</sec>
+<p>
+  When <xref ref-type="custom" custom-type="expression" rid="eval-1"><inline-formula><tex-math><![CDATA[ x \\left(x + 2 y\\right) ]]></tex-math></xref> is expanded, it becomes <xref ref-type="custom" custom-type="expression" rid="eval-2"><inline-formula><tex-math><![CDATA[ x^{2} + 2 x y ]]></tex-math></xref>.
+</p>
+...
+<back>
+  <notes notes-type="expressions">
+    <sec id="eval-1" sec-type="expression">
+      <code code-type="notebook-code" language="python" language-version="3.11.1" executable="yes"
+        id="eval-1-code">
+        polynomial
+      </code>
+      <sec sec-type="notebook-output" id="eval-1-output-0">
+        <tex-math><![CDATA[ x \\left(x + 2 y\\right) ]]></tex-math>
+      </sec>
+    </sec>
+    <sec id="eval-2" sec-type="expression">
+      <code code-type="notebook-code" language="python" language-version="3.11.1" executable="yes"
+        id="eval-2-code">
+        expand(polynomial)
+      </code>
+      <sec sec-type="notebook-output" id="eval-2-output-0">
+        <tex-math><![CDATA[ x^{2} + 2 x y ]]></tex-math>
+      </sec>
+    </sec>
+  </notes>
+</back>
+```
 
 ## Restoring Execution Environment
 
