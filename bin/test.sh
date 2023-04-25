@@ -18,6 +18,10 @@ for folder in $dir/*; do
             # If the jats command fails, collect the exit code in the array
             exit_codes="${exit_codes} ${?}"
         fi
+        if ! jats validate "$folder/$test.xml"; then
+            # If the jats validate fails, collect the exit code in the array
+            exit_codes="${exit_codes} ${?}"
+        fi
     fi
 done
 
