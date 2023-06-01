@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.3 20210610//EN" "http://jats.nlm.nih.gov/publishing/1.3/JATS-archivearticle1-3-mathml3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ali="http://www.niso.org/schemas/ali/1.0/" dtd-version="1.3" xml:lang="en" id="notebook">
+  <front>
+    <article-meta>
+      <title-group>
+        <article-title>Notebook with Inline Execution</article-title>
+      </title-group>
+    </article-meta>
+  </front>
+  <body>
+    <p>This notebook has a simple example of inline evaluation:</p>
+    <p>
+      <xref ref-type="custom" custom-type="expression" rid="eval-1">3</xref>
+    </p>
+  </body>
+  <back>
+    <notes notes-type="expressions">
+      <sec id="eval-1" sec-type="expression">
+        <code executable="yes">1 + 2</code>
+        <sec sec-type="notebook-output">
+          <p>1 + 2</p>
+        </sec>
+      </sec>
+    </notes>
+  </back>
+  <sub-article id="notebook-notebook">
+    <front-stub>
+      <article-version article-version-type="alt representation">notebook</article-version>
+    </front-stub>
+    <body>
+      <sec id="nb-cell-1" sec-type="notebook-content">
+        <p>This notebook has a simple example of inline evaluation:</p>
+        <p>
+          <xref ref-type="custom" custom-type="expression" rid="eval-1">3</xref>
+        </p>
+      </sec>
+    </body>
+    <back>
+      <notes notes-type="expressions">
+        <sec id="eval-1" sec-type="expression">
+          <code executable="yes">1 + 2</code>
+          <sec sec-type="notebook-output">
+            <p>1 + 2</p>
+          </sec>
+        </sec>
+      </notes>
+    </back>
+  </sub-article>
+</article>
