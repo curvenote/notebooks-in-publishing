@@ -1,0 +1,9 @@
+cases:
+  - title: Main article body is empty
+    select: article > body
+    equals: {}
+  - title: Sub-article includes notebook content
+    selectAll: sub-article > body > sec > code
+    equals:
+      - type: code
+        value: print('this notebook only has code')

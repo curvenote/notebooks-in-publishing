@@ -1,0 +1,6 @@
+cases:
+  - title: Article contains figure
+  - title: Article figure has caption
+  - title: Article figure caption has supplementary material
+  - title: Sub-article contains figure in output
+  - title: Sub-article figure in output has caption

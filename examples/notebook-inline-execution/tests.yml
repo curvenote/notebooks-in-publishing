@@ -1,0 +1,7 @@
+cases:
+  - title: Article contains inline xref
+  - title: Article back contains expressions notes
+  - title: Expression note has code
+  - title: Expression note has output
+  - title: Sub-article contains inline xref
+  - title: Sub-article back contains expressions notes

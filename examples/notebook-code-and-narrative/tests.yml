@@ -19,11 +19,21 @@ cases:
         xlink:href: https://matplotlib.org/stable/gallery/lines_bars_and_markers/cohere.html
       - type: text
         value: ).
-  - title: The link has the correct text
-    selectAll: 'ext-link > *'
+  - title: The markdown cell also exists in notebook sub-article
+    selectAll: 'sub-article > body > sec > p > *'
     equals:
       - type: text
-        value: source
+        value: An example showing how to plot the coherence of two signals (
+      - type: ext-link
+        ext-link-type: uri
+        xlink:href: https://matplotlib.org/stable/gallery/lines_bars_and_markers/cohere.html
+      - type: text
+        value: ).
+  - title: The link has the correct text
+    select: 'ext-link > *'
+    equals:
+      type: text
+      value: source
   - title: The code is present and not malformed
     select: 'body code'
     equals:

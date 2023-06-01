@@ -1,0 +1,6 @@
+cases:
+  - title: Multiple outputs in the sub-article - output 1
+    selectAll: 'sub-article > body > sec > sec[sec-type="notebook-output"] > *'
+    equals:
+      - type: alternatives
+      - type: alternatives
