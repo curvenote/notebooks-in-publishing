@@ -181,7 +181,7 @@ The markup should be stripped from the code input, and put as a `caption` elemen
 
 ### Referencing an Executable Output
 
-The main `article` can reference executable content pointing to the output where the figure, table, or output came from. In many markup languages is possible using an `embed`, `import`, `include` or `glue` syntax. For computational outputs, there must be `xref` elements contained in a `<supplementary-material specific-use="notebook">` to point to `notebook`, the `notebook-code` and the specific `notebook-output` used. The `<supplementary-material />` should be in a paragraph in the caption of a figure or table and include references to the specific outputs that are used (which can be hidden `xref` elements). At this time, `xref`'s to notebook contents are `ref-type="custom"`, with the appropriate `custom-type` that matches the `article-type="notebook"` or `sec-type` (for code and outputs).
+The main `article` can reference executable content pointing to the notebook code cell where the figure, table, or output came from. In many markup languages is possible using an `embed`, `import`, `include` or `glue` syntax. For computational outputs, there must be `xref` elements contained in a `<supplementary-material specific-use="notebook">` to point to `notebook` and the `notebook-code` used. Cross-references to the individual outputs are not necessary, as there may be multiple outputs and they can be inferred from the content of the `notebook-code` cell. The `<supplementary-material />` should be in a paragraph in the caption of a figure or table and include references to the specific outputs that are used (which can be hidden `xref` elements). At this time, `xref`'s to notebook contents are `ref-type="custom"`, with the appropriate `custom-type` that matches the `article-type="notebook"` or `sec-type` (for code and outputs).
 
 The same `media` or `graphic` or `table` elements can be used as normal JATS, and point to the same output data.
 
@@ -200,9 +200,7 @@ The same `media` or `graphic` or `table` elements can be used as normal JATS, an
           <!-- Have a pointer back to the notebook -->
           See methods in <xref ref-type="custom" custom-type="notebook" rid="nb1">Notebook 1</xref>
           <!-- Have a pointer back to the specific cell -->
-          from <xref ref-type="custom" custom-type="notebook-code" rid="nb1-cell-3">Cell 4</xref>
-          <!-- Specifically point to the notebook output that is used, no need to show that to the reader though! -->
-          <xref ref-type="custom" custom-type="notebook-output" rid="nb1-cell-3-output-0" />.
+          from <xref ref-type="custom" custom-type="notebook-code" rid="nb1-cell-3">Cell 4</xref>.
         </caption>
       </supplementary-material>
     </p>
@@ -212,6 +210,10 @@ The same `media` or `graphic` or `table` elements can be used as normal JATS, an
     <media specific-use="original-format" mimetype="application" mime-subtype="vnd.plotly.v1+json" xlink:href="nb1-cell-3-plotly.json" />
     <media specific-use="web" mimetype="text" mime-subtype="html" xlink:href="nb1-cell-3.html" />
     <graphic specific-use="print" mimetype="image" mime-subtype="jpeg" xlink:href="nb1-cell-3.jpg" />
+  </alternatives>
+  <!-- Multiple outputs show up as multiple bundles of alternatives -->
+  <alternatives>
+    <media specific-use="stream" mimetype="text" mime-subtype="plain" xlink:href="nb1-cell-3-stream.txt"/>
   </alternatives>
 </fig>
 ```
