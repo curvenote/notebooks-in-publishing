@@ -3,7 +3,10 @@ title: MECA Examples
 date: 2023-08-14
 ---
 
+The following table has examples of JATS output that includes MECA and JATS exports from both MyST and Quarto. These were produced on Aug 14, 2023.
+
 :::{list-table} Examples of full MECA bundle
+:name: meca-examples
 
 - - Thumbnail
   - Details
