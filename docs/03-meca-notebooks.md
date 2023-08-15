@@ -3,7 +3,7 @@ title: Notebooks in MECA
 date: 2022/12/12
 ---
 
-The goal of this article is to recommend community standards for including Notebooks in MECA files. This is intended to be complementary to our proposal regarding the [inclusion of computational notebooks within JATS XML files](https://github.com/curvenote/notebooks-now/blob/main/02-notebooks-as-jats.md).
+The goal of this article is to recommend community standards for including Notebooks in MECA files. This is intended to be complementary to our proposal regarding the [inclusion of computational notebooks within JATS XML files](./02-notebooks-as-jats.md).
 
 :::{.callout-note}
 This is a very rough `DRAFT`, as we get more authors, we can add stonger language like "we recommend" etc. That may have leaked in already.
