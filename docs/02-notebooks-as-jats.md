@@ -4,7 +4,7 @@ description: ''
 date: 2022-12-09
 ---
 
-The goal of this article is to recommend community standards for representing Notebooks as [JATS](https://jats.nlm.nih.gov). As discussed in [approach](./approach.md), the notebook can either be the main document of a JATS `article` or as a `sub-article`, which is more appropriate for authors who create figures in different notebooks today, and reference the figures created in those notebooks in the main document.
+The goal of this article is to recommend community standards for representing Notebooks as [JATS](https://jats.nlm.nih.gov). As discussed in [approach](./01-approach.md), the notebook can either be the main document of a JATS `article` or as a `sub-article`, which is more appropriate for authors who create figures in different notebooks today, and reference the figures created in those notebooks in the main document.
 
 We propose that all referenced notebooks be represented as:
 
