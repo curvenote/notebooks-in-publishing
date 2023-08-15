@@ -1,7 +1,7 @@
 version: 1
 project:
   title: Publishing Notebooks - JATS & MECA
-  github: https://github.com/curvenote/notebooks-now
+  github: https://github.com/curvenote/notebooks-in-publishing
   license: CC-BY-4.0
   authors:
     - name: Rowan Cockett
