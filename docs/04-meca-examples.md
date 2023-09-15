@@ -13,11 +13,11 @@ The following table has examples of JATS output that includes MECA and JATS expo
   - Live Article
   - MECA Download
 - - ![](./examples/myst-full.png)
-  - Produced with `mystmd` v1.1.11
+  - Produced with `mystmd` v1.1.16
   - [Visit Article](https://notebooks-now.github.io/submission-myst-full/)
   - [meca.zip](./examples/meca-myst-full.zip)
 - - ![](./examples/myst-lite.png)
-  - Produced with `mystmd` v1.1.11
+  - Produced with `mystmd` v1.1.16
   - [Visit Article](https://notebooks-now.github.io/submission-myst-lite/)
   - [meca.zip](./examples/meca-myst-lite.zip)
 - - ![](./examples/quarto-full.png)
